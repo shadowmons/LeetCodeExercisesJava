@@ -5,7 +5,11 @@ import java.util.Arrays;
 public class LeetCodeE {
 	
 	
-	
+	//You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+	//Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+	//The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 	
 	
 	public static void MergeSortedArray1 (int[] nums1, int[] nums2, int m, int n) {
@@ -32,13 +36,12 @@ public class LeetCodeE {
     }
 	
 	/**int [] array1 = new int[]{1,2,3,0,0,0};
-		int [] array2 = new int[]{2,5,6};
-		System.out.println(Arrays.toString(array1));
-		
-		LeetCodeE.MergeSortedArray2(array1,array2, 3,3);
-		
-		System.out.println(Arrays.toString(array1));**/
+	int [] array2 = new int[]{2,5,6};
+	LeetCodeE.MergeSortedArray2(array1,array2, 3,3);
+	System.out.println(Arrays.toString(array1));**/
 	
+	
+	//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 	public static int removeElement1 (int[]nums, int val) {
 		int j = 0;
 		for (int i = 0; i < nums.length; i++) {
@@ -54,6 +57,10 @@ public class LeetCodeE {
 	/** int r = LeetCodeE.removeElement1(array1, 2);
 	System.out.println(Arrays.toString(array1));
 	System.out.println(r);  **/
+	
+	//Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+
+	//Consider the number of unique elements of nums to be k
 	
 	public static int removeDuplicatesSort1(int[]nums) {
 		int j = 1;
@@ -76,7 +83,9 @@ public class LeetCodeE {
 		System.out.println(r);**/
 
 	//Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.
-	
+	//Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+	//Return k after placing the final result in the first k slots of nums.
+	//Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 	public static int removeDuplicatesSortTwice(int[]nums) {
 		int j = 1;
 		int cont =0;
@@ -121,7 +130,7 @@ public class LeetCodeE {
 		System.out.println(Arrays.toString(array1)); 
 		System.out.println(r);*/
 	
-	// Given an array nums of size n, return the majority element.
+	//Given an array nums of size n, return the majority element.
 	//The majority element is the element that appears more than n/2 times. You may assume that the majority element always exists in the array.
 	public static int MajorityElement (int[] nums) {
 		int cont = 1;
@@ -154,7 +163,7 @@ public class LeetCodeE {
 		System.out.println(Arrays.toString(array1)); 
 		System.out.println(r);**/
 	
-	
+	//Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 	public static void RotateArray1(int[]nums, int k) {
 		k = k%nums.length;
 		int aux = 0;
@@ -224,6 +233,9 @@ public class LeetCodeE {
 		return diff;
 	}
 	
+	//You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
+	//On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.	
+	//Find and return the maximum profit you can achieve.
 	public static int BestTimetoBuyandSellStock2 (int[]prices) {
 		int diff = 0;
 		for (int i = 1; i < prices.length; i++) {
@@ -273,6 +285,11 @@ public class LeetCodeE {
 		return true;
 	}
 	
+	//You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0].
+	//Each element nums[i] represents the maximum length of a forward jump from index i. In other words, if you are at nums[i], you can jump to any nums[i + j] where:
+    //0 <= j <= nums[i] and
+    //i + j < n
+	//Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1].
 	public static int JumpGameII(int[] nums) {
 		int jumpHigh = 0; 
 		int count = 0;
